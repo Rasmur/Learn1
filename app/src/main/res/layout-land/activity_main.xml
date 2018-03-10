@@ -6,23 +6,25 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.igory.learn1.MainActivity"
-    android:orientation="vertical">
+    android:orientation="horizontal">
 
     <EditText
+        android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/enter_the_text"
         android:inputType="textPersonName"
         tools:layout_editor_absoluteX="152dp"
-        tools:layout_editor_absoluteY="16dp" />
+        tools:layout_editor_absoluteY="16dp"
+        android:focusable="false"/>
 
     <CheckBox
         android:id="@+id/checkBox"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/checkBoxName"
-        android:onClick="onCheckboxClicked"/>
+        android:onClick="onCheckboxClicked"
+        android:text="@string/checkBoxName" />
 
     <Button
         android:id="@+id/button"
@@ -30,6 +32,7 @@
         android:layout_height="wrap_content"
         android:text="@string/NewScreen"
         tools:layout_editor_absoluteX="33dp"
-        tools:layout_editor_absoluteY="73dp" />
+        tools:layout_editor_absoluteY="73dp"
+        android:enabled="false"/>
 
 </LinearLayout>
