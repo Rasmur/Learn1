@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Learn1</string>
     <string name="forMy">Это что-то мешает ему жить нормально и полноценно пришло, это наше дело го</string>
-    <string name="NewScreen">Second Activity</string>
+    <string name="NewScreen">MyView</string>
     <string name="enter_the_text">Enter text</string>
     <string name="checkBoxName">Lock</string>
+    <string name="button">Button</string>
 </resources>

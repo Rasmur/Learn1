@@ -1,5 +1,6 @@
 package com.example.igory.learn1;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
@@ -7,10 +8,13 @@ import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener{
@@ -77,26 +81,32 @@ public class MainActivity extends AppCompatActivity implements OnClickListener{
 
     @Override
     public void onClick(View view) {
-        Intent toSecondActivity = new Intent(this, SecondActivity.class);
-        startActivity(toSecondActivity);
+
+        LinearLayout layout = (LinearLayout) findViewById(R.id.MainLayout);
+
+        MyView myView = new MyView(this);
+        myView.setText("MyView");
+
+        myView.setLayoutParams(layout.getLayoutParams());
+        layout.addView(myView);
+
+        Log.d(TAG, "Added");
     }
 
     public void onCheckboxClicked(View view) {
-        // Получаем флажок
+
         CheckBox language = (CheckBox) view;
-        // Получаем, отмечен ли данный флажок
+
         boolean checked = language.isChecked();
 
         if (checked)
         {
             if(getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT)
             {
-                Log.d(TAG, "2222222222222");
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
             }
-            else //if (getRequestedOrientation() == ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE)
+            else
             {
-                Log.d(TAG, "33333333333333");
                 setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             }
         }
